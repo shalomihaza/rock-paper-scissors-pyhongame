@@ -5,17 +5,18 @@ player_wins = 0
 
 
 def Choose_Option():
-    user_choice = input("Choose Rock, Paper or Scissors: ")
-    if user_choice in ["Rock", "rock", "r", "R"]:
-        user_choice = "r"
-    elif user_choice in ["Paper", "paper", "p", "P"]:
-        user_choice = "p"
-    elif user_choice in ["Scissors", "scissors", "s", "S"]:
-        user_choice = "s"
+    player_choice = input("Choose Rock, Paper or Scissors: ")
+
+    if player_choice in ["Rock", "rock", "r", "R"]:
+        player_choice = "r"
+    elif player_choice in ["Paper", "paper", "p", "P"]:
+        player_choice = "p"
+    elif player_choice in ["Scissors", "scissors", "s", "S"]:
+        player_choice = "s"
     else:
         print("I don't understand, try again.")
         Choose_Option()
-    return user_choice
+    return player_choice
 
 
 def Computer_Option():
@@ -32,12 +33,12 @@ def Computer_Option():
 while True:
     print("")
 
-    user_choice = Choose_Option()
+    player_choice = Choose_Option()
     comp_choice = Computer_Option()
 
     print("")
 
-    if user_choice == "r":
+    if player_choice == "r":
         if comp_choice == "r":
             print("You chose rock. The computer chose rock. You tied.")
 
@@ -49,7 +50,7 @@ while True:
             print("You chose rock. The computer chose scissors. You win.")
             player_wins += 1
 
-    elif user_choice == "p":
+    elif player_choice == "p":
         if comp_choice == "r":
             print("You chose paper. The computer chose rock. You win.")
             player_wins += 1
@@ -62,7 +63,7 @@ while True:
             print("You chose paper. The computer chose scissors. You lose.")
             comp_wins += 1
 
-    elif user_choice == "s":
+    elif player_choice == "s":
         if comp_choice == "r":
             print("You chose scissors. The computer chose rock. You lose.")
             comp_wins += 1
@@ -79,10 +80,10 @@ while True:
     print("Computer wins: " + str(comp_wins))
     print("")
 
-    user_choice = input("Do you want to play again? (y/n)")
-    if user_choice in ["Y", "y", "yes", "Yes"]:
+    player_choice = input("Do you want to play again? (y/n)")
+    if player_choice in ["Y", "y", "yes", "Yes"]:
         pass
-    elif user_choice in ["N", "n", "no", "No"]:
+    elif player_choice in ["N", "n", "no", "No"]:
         break
     else:
         break
